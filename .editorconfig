@@ -1,0 +1,28 @@
+# This file is designed to help maintain coding standards/styles between different editors and IDEs.
+# If you are not committing code based upon these rules your pull request will likely be declined.
+# Do not modify this file without discussing it with the project leader.
+# More information at http://EditorConfig.org
+
+# No .editorconfig files above the root directory
+root = true
+
+[*]
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Use 2 spaces for indentation in HTML, JavaScript, Ruby, SCSS, and XML
+
+[*.{html,js,rb,scss,xml}]
+indent_size = 2
+
+[Gemfile*]
+indent_size = 2
+
+[Rakefile]
+indent_size = 2
+
+[*.md]
+indent_size = 4

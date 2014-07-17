@@ -1,0 +1,30 @@
+{
+  "name": "Google Tour",
+  "version": "0.0.1",
+  "authors": [
+    "phrough@gmail.com"
+  ],
+  "description": "A tour of some of the many fine products and services offered by Google!",
+  "keywords": [
+    "google",
+    "tour",
+    "phrough",
+    "webmaster"
+  ],
+  "license": "MIT",
+  "homepage": "http://phrough.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.4",
+    "core-elements": "Polymer/core-elements#~0.3.4",
+    "paper-elements": "Polymer/paper-elements#~0.3.4"
+  }
+}
