@@ -23,4 +23,5 @@ You can always search the codebase for the string "TODO" to find something to fi
 - Update bower dependencies to only get the polymer components we actual utilize
 - Create custom component that utilizes polymer-ui-card and paper-button to build a new component. Possibly load instances of it via a json object and polymer data binding
 - Investigate and fix "core-menu > paper-items" core-selected functionality not working automatically... perhaps core-menu requires us to use core-item for this functionality to work? Currently using custom javascript to add/remove the core-selected class.
+- Implement build script to combine template calls/resources to reduce number of server calls.
 
