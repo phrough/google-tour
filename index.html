@@ -28,14 +28,14 @@
       <core-header-panel navigation flex mode="seamed">
         <core-toolbar><div id="logo"><img src="//material-design.storage.googleapis.com/images/Google_Logo.svg" alt="Google logo"></div></core-toolbar>
         <core-menu selected="0">
-          <paper-item icon="google" label="Welcome" class="core-selected"></paper-item>
-          <paper-item icon="info" label="Google News"></paper-item>
-          <paper-item icon="drive-video" label="Google Toolbar"></paper-item>
-          <paper-item icon="social:group" label="Google Groups"></paper-item>
-          <paper-item icon="image:image" label="Google Images"></paper-item>
-          <paper-item icon="shopping-cart" label="Google Shopping"></paper-item>
-          <paper-item icon="help" label="The Google Gamble"></paper-item>
-          <paper-item icon="explore" label="Explore Further"></paper-item>
+          <paper-item icon="google" label="Welcome" class="core-selected" panelNumber="0"></paper-item>
+          <paper-item icon="info" label="Google News" panelNumber="1"></paper-item>
+          <paper-item icon="drive-video" label="Google Toolbar" panelNumber="2"></paper-item>
+          <paper-item icon="social:group" label="Google Groups" panelNumber="3"></paper-item>
+          <paper-item icon="image:image" label="Google Images" panelNumber="4"></paper-item>
+          <paper-item icon="shopping-cart" label="Google Shopping" panelNumber="5"></paper-item>
+          <paper-item icon="help" label="The Google Gamble" panelNumber="6"></paper-item>
+          <paper-item icon="explore" label="Explore Further" panelNumber="7"></paper-item>
         </core-menu>
       </core-header-panel>
 
@@ -116,6 +116,7 @@
       window.addEventListener('polymer-ready', function(e) {
 
         var pages = document.querySelector('core-pages');
+        var navItems = document.querySelectorAll('paper-item');
 
         document.querySelector('paper-fab').onclick = function(e) {
           pages.selected = (pages.selected + 1) % pages.items.length;
@@ -129,7 +130,11 @@
         };
 
         document.querySelector('core-menu').onclick = function(e) {
-          console.log(this);
+          [].forEach.call(navItems, function (el) {
+            el.classList.remove('core-selected');
+          });
+          e.target.classList.add('core-selected');
+          pages.selected = e.target.getAttribute('panelNumber');
         }
 
       });

@@ -21,5 +21,6 @@ Please ensure that your editor of choice supports .editorconfig files. It will m
 You can always search the codebase for the string "TODO" to find something to fix or improve. For more serious TODO's, please include them in this list:
 
 - Update bower dependencies to only get the polymer components we actual utilize
-
+- Create custom component that utilizes polymer-ui-card and paper-button to build a new component. Possibly load instances of it via a json object and polymer data binding
+- Investigate and fix "core-menu > paper-items" core-selected functionality not working automatically... perhaps core-menu requires us to use core-item for this functionality to work? Currently using custom javascript to add/remove the core-selected class.
 
