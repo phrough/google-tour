@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>The Google Tour</title>
     <script src="vendor/bower/platform/platform.js"></script>
 
     <link rel="import" href="vendor/bower/core-scaffold/core-scaffold.html">
@@ -26,8 +27,8 @@
     <core-scaffold>
       <core-header-panel navigation flex mode="seamed">
         <core-toolbar><div id="logo"><img src="//material-design.storage.googleapis.com/images/Google_Logo.svg" alt="Google logo"></div></core-toolbar>
-        <core-menu theme="core-light-theme">
-          <paper-item icon="google" label="Google Search" active></paper-item>
+        <core-menu selected="0">
+          <paper-item icon="google" label="Google Search" class="core-selected"></paper-item>
           <paper-item icon="info" label="Google News"></paper-item>
           <paper-item icon="drive-video" label="Google Toolbar"></paper-item>
           <paper-item icon="social:group" label="Google Groups"></paper-item>
@@ -36,7 +37,6 @@
           <paper-item icon="help" label="The Google Gamble"></paper-item>
           <paper-item icon="explore" label="Explore Further"></paper-item>
         </core-menu>
-
       </core-header-panel>
 
       <div tool>The Google Tour</div>
@@ -130,7 +130,7 @@
         };
 
         document.querySelector('core-menu').onclick = function(e) {
-
+          console.log(this);
         }
 
       });

@@ -13,6 +13,18 @@ p {
     color: #666;
 }
 
+a:link {
+    color: #5677fc;
+}
+
+a:visited {
+    color: #91a7ff;
+}
+
+a:hover {
+    color: #e91e63;
+}
+
 div[tool] {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -50,7 +62,7 @@ core-menu {
     margin: 12px 0;
 }
 
-core-menu paper-item[active] {
+core-menu paper-item.core-selected {
     font-weight: 400;
     color: #e91e63;
 }
@@ -63,7 +75,6 @@ core-header-panel {
 
 .content {
     position: relative;
-    background-color: #f5f5f5;
     padding: 20px 40px;
 }
 
@@ -90,8 +101,8 @@ polymer-ui-card paper-button {
 
 paper-fab {
     position: absolute;
-    right: 20px;
-    bottom: 0;
+    right: -7px;
+    top: 125px;
     background: #f50057;
     color: #fff;
 }
