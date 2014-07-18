@@ -28,6 +28,10 @@ core-toolbar::shadow .toolbar-tools {
     padding-left: 0;
 }
 
+core-scaffold::shadow core-toolbar {
+    background-color: #5677fc;
+}
+
 #logo {
     width: 100%;
     padding: 0 12px;
