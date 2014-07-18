@@ -50,6 +50,11 @@ core-menu {
     margin: 12px 0;
 }
 
+core-menu paper-item[active] {
+    font-weight: 400;
+    color: #e91e63;
+}
+
 core-header-panel {
     display: block;
     width: 100%;
@@ -70,6 +75,19 @@ polymer-ui-card {
     clear: both;
 }
 
+paper-button[raisedButton] {
+    background: #f50057;
+    color: #fff;
+}
+
+paper-button[raisedButton]::shadow #ripple {
+    color: #880e4f;
+}
+
+polymer-ui-card paper-button {
+    margin: 15px 0;
+}
+
 paper-fab {
     position: absolute;
     right: 20px;
@@ -77,3 +95,4 @@ paper-fab {
     background: #f50057;
     color: #fff;
 }
+

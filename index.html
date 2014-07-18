@@ -15,18 +15,19 @@
     <link rel="import" href="vendor/bower/core-icons/iconsets/social-icons.html">
     <link rel="import" href="vendor/bower/core-pages/core-pages.html">
     <link rel="import" href="vendor/bower/polymer-ui-card/polymer-ui-card.html">
+    <link rel="import" href="vendor/bower/paper-button/paper-button.html">
     <link rel="import" href="vendor/bower/paper-fab/paper-fab.html">
 
     <link rel="stylesheet" href="assets/css/tour.css">
   </head>
-  <body fullbleed layout vertical unresolved>
+  <body unresolved>
 
 
     <core-scaffold>
       <core-header-panel navigation flex mode="seamed">
         <core-toolbar><div id="logo"><img src="//material-design.storage.googleapis.com/images/Google_Logo.svg" alt="Google logo"></div></core-toolbar>
         <core-menu theme="core-light-theme">
-          <paper-item icon="google" label="Google Search"></paper-item>
+          <paper-item icon="google" label="Google Search" active></paper-item>
           <paper-item icon="info" label="Google News"></paper-item>
           <paper-item icon="drive-video" label="Google Toolbar"></paper-item>
           <paper-item icon="social:group" label="Google Groups"></paper-item>
@@ -35,6 +36,7 @@
           <paper-item icon="help" label="The Google Gamble"></paper-item>
           <paper-item icon="explore" label="Explore Further"></paper-item>
         </core-menu>
+
       </core-header-panel>
 
       <div tool>The Google Tour</div>
@@ -46,18 +48,21 @@
             <polymer-ui-card>
               <h2>Explore ways to take your search further.</h2>
               <p>Work is hard and you need a break. A sunsoaked vacation is just the ticket, but where to begin? With Google there's a world of helpful, timesaving features right at your fingertips. To see how these free services can help you find what you're looking for faster, tag along as we plan a tropical vacation, or go straight to <a href="#">Google Services and Tools</a>.</p>
+              <paper-button label="Google Services and Tools" raisedButton></paper-button>
             </polymer-ui-card>
           </div>
           <div>
             <polymer-ui-card>
               <h2>Get the latest from Google News.</h2>
               <p>The destination determined, you decide to visit <a href="#">Google News</a> to brush up on the very latest, so you'll be able to converse with the natives intelligently about the events of the day. Search and browse 4,000 leading news sources from around the world, with headlines and photos continuously updated automatically throughout the day. Click on a headline to be taken directly to the original source of the story you want to read.</p>
+              <paper-button label="Read Google News" raisedButton></paper-button>
             </polymer-ui-card>
           </div>
           <div>
             <polymer-ui-card>
               <h2>Take the Google Toolbar with you.</h2>
               <p>Realizing you will hit a lot of websites before you hit the beach, the first thing you pack is the Google Toolbar. Add it to your Internet Explorer and you can take Google with you anywhere on the web. It takes only seconds to install and enables you to easily use Google without having to return to the homepage. <a href="#">Download the Google Toolbar</a></p>
+              <paper-button label="Upgrade to Chrome" raisedButton></paper-button>
             </polymer-ui-card>
           </div>
           <div>
@@ -111,8 +116,9 @@
       // Wait for 'polymer-ready'. Ensures the element is upgraded.
       window.addEventListener('polymer-ready', function(e) {
 
+        var pages = document.querySelector('core-pages');
+
         document.querySelector('paper-fab').onclick = function(e) {
-          var pages = document.querySelector('core-pages');
           pages.selected = (pages.selected + 1) % pages.items.length;
           pages.async(function() {
             if (pages.selectedIndex == 0) {
@@ -122,6 +128,10 @@
             }
           });
         };
+
+        document.querySelector('core-menu').onclick = function(e) {
+
+        }
 
       });
     </script>
