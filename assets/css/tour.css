@@ -1,4 +1,4 @@
-/*@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,700,700italic);*/
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,700,700italic);
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -13,6 +13,15 @@ p {
     color: #666;
 }
 
+div[tool] {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+core-toolbar {
+    background: transparent;
+}
+
 core-menu {
     display: block;
     margin: 12px;
@@ -25,13 +34,23 @@ core-header-panel {
 }
 
 .content {
+    position: relative;
     background-color: #f5f5f5;
-    height: 5000px;
-    padding: 20px;
+    padding: 20px 40px;
 }
 
 polymer-ui-card {
     display: block;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 15px 30px;
+    max-width: 600px;
+    clear: both;
+}
+
+paper-fab {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    background: #f50057;
+    color: #fff;
 }
