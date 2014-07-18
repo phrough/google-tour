@@ -23,21 +23,21 @@
       <core-header-panel navigation flex mode="seamed">
         <core-toolbar><div id="logo"><img src="//material-design.storage.googleapis.com/images/Google_Logo.svg" alt="Google logo"></div></core-toolbar>
         <core-menu selected="0">
-          <paper-item icon="google" label="Welcome" class="core-selected" panelNumber="0"></paper-item>
-          <paper-item icon="info" label="Google News" panelNumber="1"></paper-item>
-          <paper-item icon="drive-video" label="Google Toolbar" panelNumber="2"></paper-item>
-          <paper-item icon="social:group" label="Google Groups" panelNumber="3"></paper-item>
-          <paper-item icon="image:image" label="Google Images" panelNumber="4"></paper-item>
-          <paper-item icon="shopping-cart" label="Google Shopping" panelNumber="5"></paper-item>
-          <paper-item icon="help" label="The Google Gamble" panelNumber="6"></paper-item>
-          <paper-item icon="explore" label="Explore Further" panelNumber="7"></paper-item>
+          <paper-item icon="google" label="Welcome" class="core-selected" pageNumber="0"></paper-item>
+          <paper-item icon="info" label="Google News" pageNumber="1"></paper-item>
+          <paper-item icon="drive-video" label="Google Toolbar" pageNumber="2"></paper-item>
+          <paper-item icon="social:group" label="Google Groups" pageNumber="3"></paper-item>
+          <paper-item icon="image:image" label="Google Images" pageNumber="4"></paper-item>
+          <paper-item icon="shopping-cart" label="Google Shopping" pageNumber="5"></paper-item>
+          <paper-item icon="help" label="The Google Gamble" pageNumber="6"></paper-item>
+          <paper-item icon="explore" label="Explore Further" pageNumber="7"></paper-item>
         </core-menu>
       </core-header-panel>
 
       <div tool>The Google Tour</div>
       <div class="content">
 
-        <core-pages selected="0" id="cards">
+        <core-pages id="cards">
 
           <div>
             <polymer-ui-card>
@@ -114,7 +114,19 @@
         var navItems = document.querySelectorAll('paper-item');
 
         document.querySelector('paper-fab').onclick = function(e) {
-          pages.selected = (pages.selected + 1) % pages.items.length;
+          updatePage((pages.selected + 1) % pages.items.length);
+          updateMenu(pages.selected);
+        };
+
+        document.querySelector('core-menu').onclick = function(e) {
+          var pageNumber = e.target.getAttribute('pageNumber');
+          updatePage(pageNumber)
+          updateMenu(pageNumber);
+          pages.selected = pageNumber;
+        }
+
+        updatePage = function(pageNumber) {
+          pages.selected = pageNumber;
           pages.async(function() {
             if (pages.selectedIndex == 0) {
               pages.selectedItem.classList.remove('begin');
@@ -122,20 +134,13 @@
               pages.items[0].classList.add('begin');
             }
           });
-          updateMenu(pages.selected);
-        };
-
-        document.querySelector('core-menu').onclick = function(e) {
-          var panelNumber = e.target.getAttribute('panelNumber');
-          updateMenu(panelNumber);
-          pages.selected = panelNumber;
         }
 
-        updateMenu = function(panelNumber) {
+        updateMenu = function(pageNumber) {
           [].forEach.call(navItems, function (el) {
             el.classList.remove('core-selected');
           });
-          document.querySelector('paper-item[panelNumber="'+panelNumber+'"').classList.add('core-selected');
+          document.querySelector('paper-item[pageNumber="'+pageNumber+'"').classList.add('core-selected');
         }
       });
     </script>
