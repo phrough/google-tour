@@ -13,6 +13,10 @@ p {
     color: #666;
 }
 
+a {
+    text-decoration: none;
+}
+
 a:link {
     color: #5677fc;
 }
@@ -23,6 +27,7 @@ a:visited {
 
 a:hover {
     color: #e91e63;
+    text-decoration: underline;
 }
 
 div[tool] {
