@@ -7,6 +7,11 @@ This site is constructed using web components. Bower is used for dependency mana
 - [Install Bower](http://bower.io/)
 -
 
+## Design
+
+Design decisions should be made based on the [Google design guidelines](http://www.google.com/design/spec/style/color.html#color-ui-color-application).
+
+
 ## Contributing
 
 ### .editorconfig

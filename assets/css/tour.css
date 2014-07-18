@@ -2,10 +2,10 @@
 
 * {
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
     color: #333;
 }
 
@@ -22,9 +22,28 @@ core-toolbar {
     background: transparent;
 }
 
+core-toolbar::shadow .toolbar-tools {
+    height: 80px;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#logo {
+    width: 100%;
+    padding: 0 12px;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#logo img {
+    height: 40px;
+    width: 90px;
+    max-width: 100%;
+}
+
 core-menu {
     display: block;
-    margin: 12px;
+    margin: 12px 0;
 }
 
 core-header-panel {
