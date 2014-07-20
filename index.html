@@ -119,10 +119,9 @@
         };
 
         document.querySelector('core-menu').onclick = function(e) {
-          var pageNumber = e.target.getAttribute('pageNumber');
+          var pageNumber = parseInt(e.target.getAttribute('pageNumber'));
           updatePage(pageNumber)
           updateMenu(pageNumber);
-          pages.selected = pageNumber;
         }
 
         updatePage = function(pageNumber) {
@@ -142,6 +141,7 @@
           });
           document.querySelector('paper-item[pageNumber="'+pageNumber+'"').classList.add('core-selected');
         }
+
       });
     </script>
   </body>
