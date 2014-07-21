@@ -81,6 +81,8 @@ core-header-panel {
 .content {
     position: relative;
     padding: 20px 40px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 polymer-ui-card {
